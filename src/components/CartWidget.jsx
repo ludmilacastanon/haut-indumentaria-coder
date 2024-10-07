@@ -5,7 +5,7 @@ const CartWidget = () => {
     return (
     <div style={cartStyle}>
         <span>🛒</span>
-        <span>(0)</span> {/* Puedes agregar la lógica de cantidad de items en el carrito */}
+        <span>(0)</span>
     </div>
     );
 };

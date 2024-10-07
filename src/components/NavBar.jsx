@@ -24,16 +24,16 @@ const navStyle = {
     padding: '15px 30px',
     backgroundColor: '#282c34',
     color: 'white',
-    width: '100%', // Ocupa todo el ancho de la pantalla
-    boxSizing: 'border-box', // Incluye el padding en las dimensiones
+    width: '100%', 
+    boxSizing: 'border-box', 
 };
 
 const navListStyle = {
     display: 'flex',
-    justifyContent: 'space-around', // Espacio equitativo entre los ítems
+    justifyContent: 'space-around', 
     alignItems: 'center',
     listStyleType: 'none',
-    width: '40%', // Ajusta el ancho de la lista de navegación para controlar el espacio
+    width: '40%', 
     padding: 0,
     margin: 0,
 };

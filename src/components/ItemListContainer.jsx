@@ -5,7 +5,7 @@ const ItemListContainer = ({ message }) => {
     return (
     <section style={containerStyle}>
         <h3>{message}</h3>
-      {/* Aquí irían los items */}
+      {/* Proximamente van a ir las prendas de ropa van a ir aca */}
     </section>
     );
 };
@@ -14,7 +14,7 @@ const containerStyle = {
     padding: '20px',
     backgroundColor: '#fff',
     borderRadius: '5px',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)', // Añade sombra para destacar el contenedor
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)', 
     textAlign: 'center',
     marginTop: '20px',
 };
