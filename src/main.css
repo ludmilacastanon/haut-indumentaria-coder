@@ -14,3 +14,13 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+
+#products {
+    padding-top: 100px; /* Espacio para que la nav bar y el carrusel no se superpongan */
+}
+
+.carousel-container img {
+    height: 500px; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Mantiene la proporción y cubre el área */
+}
+
