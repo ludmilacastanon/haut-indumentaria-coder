@@ -1,23 +1,68 @@
 // src/components/NavBar.jsx
 import React from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 function NavBar() {
+    const navigate = useNavigate(); // Para redirigir a la página principal
+    const location = useLocation(); // Para verificar la ruta actual
+
     const scrollToShop = () => {
-        const section = document.getElementById('shopSection');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+        if (location.pathname === '/') {
+            // Si estás en la página principal, desplaza hacia "Shop"
+            const section = document.getElementById('shopSection');
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // Si estás en otra página, redirige a la página principal y luego desplaza
+            navigate('/');
+            setTimeout(() => {
+                const section = document.getElementById('shopSection');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100); // Retraso para asegurar que la página principal cargue
         }
+    };
+
+    const scrollToTop = () => {
+        // Desplazar hacia arriba suavemente
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
         <nav style={navStyle}>
             <h2>Haut Indumentaria</h2>
             <ul style={navListStyle}>
-                <li><a href="#home" style={linkStyle}>Home</a></li>
-                <li><button onClick={scrollToShop} style={{ ...linkStyle, background: 'none', border: 'none', cursor: 'pointer' }}>Shop</button></li>
-                <li><a href="#about" style={linkStyle}>About</a></li>
-                <li><a href="#contact" style={linkStyle}>Contact</a></li>
+                <li>
+                    <Link to="/" onClick={scrollToTop} style={linkStyle}>
+                        Home
+                    </Link>
+                </li>
+                <li>
+                    <button
+                        onClick={scrollToShop}
+                        style={{
+                            ...linkStyle,
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                        }}
+                    >
+                        Shop
+                    </button>
+                </li>
+                <li>
+                    <Link to="/about" style={linkStyle}>
+                        About
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/contact" style={linkStyle}>
+                        Contact
+                    </Link>
+                </li>
             </ul>
             <CartWidget />
         </nav>
@@ -25,11 +70,11 @@ function NavBar() {
 }
 
 const navStyle = {
-    position: 'fixed', // Mantener la NavBar fija
+    position: 'fixed',
     top: 0,
     left: 0,
     width: '100%',
-    zIndex: 1000, // Asegurar que esté sobre todo el contenido
+    zIndex: 1000,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',

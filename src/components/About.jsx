@@ -1,3 +1,4 @@
+// src/components/About.jsx
 import React from 'react';
 
 function About() {
@@ -16,6 +17,7 @@ const pageStyle = {
     borderRadius: '5px',
     margin: '20px auto',
     width: '90%',
+    color: '#333',
 };
 
 export default About;
